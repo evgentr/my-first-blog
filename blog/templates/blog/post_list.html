@@ -5,21 +5,24 @@
         <body>
             <div>
                 <h1><a href="">My Blog</a></h1>
-            </div>
 
-            <div>
-                <p>published: 09.10.2016</p>
-                <h2><a href="">My first post</a></h2>
-                <p>It's so exiting to create web-sites. I like it!<br />
 		Go ahead!   <br />
-	<ul><li>first  <a href="https://djangogirls.org">link</a>  </li><li>second</li></ul>
+	<ul><li>first  <a href="https://djangogirls.org">link</a>  </li><li>second</li></ul>	
+	<br />
+	<br />
+	<br />
+            </div>
+	{% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}<</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }} <br />
+	<br />
+	<br />
+
                 </p>
             </div>
+	{% endfor %}
 
-            <div>
-                <p>published: 09.10.2016</p>
-                <h2><a href="">My second post</a></h2>
-                <p>Fuh!</p>
-            </div>
         </body>
     </html>
